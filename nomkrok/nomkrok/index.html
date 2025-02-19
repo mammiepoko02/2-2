@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KanomKrok</title>
+
+</head>
+<body>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="index.js"></script>
+<link rel="stylesheet" href="index.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+<body>
+
+  <div id="google_translate_element"></div>
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <nav>
+    <div class="nav-container">
+      <a href="index.html">
+        <img src="imgs/K_logo.png" class="logonav">
+      </a>
+
+      <div class="nav-profile">
+        <p class="nav-profile-name"></p>
+        <div onclick="openCart()" class="nav-profile-cart">
+          <i class="fas fa-cookie" style="font-size: 3vw; color: #fff;"></i>
+          <p style="font-size: 1.2vw; font-weight: 700; color:#fff;">CART</p>
+          <div id="cartcount" class="cartcount" style="display: none;">
+            0
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="sidebar">
+      <input onkeyup="sname(this)" id="txt_s" type="text" class="sidebar-search" placeholder="Search something...">
+
+      <a onclick="searchproduct('all')" class="sidebar-items">
+        All Product
+      </a>
+      <a onclick="searchproduct('Sweeties')" class="sidebar-items">
+        Sweeties
+      </a>
+        <a onclick="searchproduct('Creamy')" class="sidebar-items">
+        Creamy
+      </a>
+      <a onclick="searchproduct('Drink')" class="sidebar-items">
+        Drink
+      </a>
+      <a onclick="searchproduct('Patongko')" class="sidebar-items">
+        Patongko
+      </a>
+    </div>
+    <div id="productlist" class="product">
+  
+    </div>
+  </div>
+
+  <div id="modalDesc" class="modal" style="display: none;">
+    <div onclick="closeModal()" class="modal-bg"></div>
+    <div class="modal-page">
+      <h2>Detail</h2>
+      <br>
+      <div class="modaldesc-content">
+        <img id="mdd-img" class="modaldesc-img" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="">
+        <div class="modaldesc-detail">
+          <p id="mdd-name" style="font-size: 1.5vw;">Product name</p>
+          <p id="mdd-price" style="font-size: 1.2vw;">500 THB</p>
+          <br>
+          <p id="mdd-desc" style="color: #adadad; font-size: 1vw;">Detail of pd</p>
+          
+          
+          <div class="btn-control">
+            <button onclick="closeModal()" class="btn">
+              Close
+            </button>
+            <button onclick="addtocart()" class="btn btn-buy">
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id = "modalCart" class="modal" style="display: none;">
+    <div onclick="closeModal()" class="modal-bg"></div>
+    <div class="modal-page">
+      <h2>My cart</h2>
+      <br>
+      <div id="mycart" class="cartlist">
+        
+        
+
+      </div>
+      <div class="btn-control">
+        <button onclick="closeModal()" class="btn">
+          Cancel
+        </button>
+        <button class="btn btn-buy">
+          Buy
+        </button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
